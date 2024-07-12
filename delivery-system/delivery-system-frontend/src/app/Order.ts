@@ -7,7 +7,7 @@ export class Order {
     placedTime!: string;
     deliveryAddress!: string;
     deliveryTime!: string;
-    status!: string;
+    orderStatus!: string;
     feedback!: string;
   }
   

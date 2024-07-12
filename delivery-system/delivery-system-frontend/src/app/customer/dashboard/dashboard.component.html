@@ -10,7 +10,7 @@
                 <h4>Order ID: {{ order.id }}</h4>
                 <p>Pickup Address: {{ order.pickupAddress }}</p>
                 <p>Delivery Address: {{ order.deliveryAddress }}</p>
-                <p>Status: {{ order.status }}</p>
+                <p>Status: {{ order.orderStatus }}</p>
               </div>
               <div class="order-actions">
                 <button mat-button color="accent" (click)="trackOrder(order.id)">Track</button>
