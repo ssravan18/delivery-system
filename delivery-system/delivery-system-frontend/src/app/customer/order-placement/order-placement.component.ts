@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Order } from 'src/app/Order';
 import { OrderService } from 'src/app/services/order.service';
 
@@ -17,7 +19,12 @@ interface ordertype {
 export class OrderPlacementComponent implements OnInit {
   orderForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private orderService: OrderService) {
+  constructor(
+    private fb: FormBuilder,
+    private orderService: OrderService,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {
     this.orderForm = this.fb.group({
       packageType: ['', Validators.required],
       packageWeight: ['', Validators.required],
@@ -50,7 +57,7 @@ export class OrderPlacementComponent implements OnInit {
       this.orderService.placeOrder(orderData).subscribe(
         response => {
           console.log('Order placed successfully:', response);
-          // You can add more logic here, such as redirecting the user or showing a success message
+          this.snackBar.open('Order placed successfully', 'Close', { duration: 3000 });
         },
         error => {
           console.error('Failed to place order:', error);
