@@ -1,0 +1,23 @@
+.main {
+  background-color: #3281ee;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+button {
+  color: white;
+}
+
+.app-title{
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}

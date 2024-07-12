@@ -1,0 +1,53 @@
+.customer-management-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .customer-management-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .customer-management-container .customers-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .customer-management-container .customers-table th, 
+  .customer-management-container .customers-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .customer-management-container .customers-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .customer-management-container .customers-table td button {
+    margin-right: 5px;
+  }
+  
+  .customer-management-container .btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .customer-management-container .btn-primary {
+    background: #007bff;
+    color: #fff;
+  }
+  
+  .customer-management-container .btn-danger {
+    background: #dc3545;
+    color: #fff;
+  }
+  
