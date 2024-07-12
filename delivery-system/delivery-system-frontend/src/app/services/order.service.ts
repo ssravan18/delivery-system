@@ -8,7 +8,6 @@ import { Order } from '../Order';
 })
 export class OrderService {
   private apiUrl = 'http://localhost:8282/orders';
-
   private token = localStorage.getItem('token');
   
 
@@ -21,11 +20,20 @@ export class OrderService {
     return this.http.get<Order[]>(this.apiUrl, { headers });
   }
 
+  getCustomerOrders(): Observable<Order[]> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.token}`,
+      'Content-Type': 'application/json'
+    });
+    const customerId = localStorage.getItem('id');
+    return this.http.get<Order[]>(`${this.apiUrl}/customer/${customerId}`, { headers });
+  }
+
   placeOrder(order: Order): Observable<Order> {
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.token}`
+      'Authorization': `Bearer ${this.token}`,
+      'Content-Type': 'application/json'
     });
-    console.log("hii",order);
     return this.http.post<Order>(this.apiUrl, order, { headers });
   }
 

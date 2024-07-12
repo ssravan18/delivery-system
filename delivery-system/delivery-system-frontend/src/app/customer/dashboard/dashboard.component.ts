@@ -18,7 +18,7 @@ export class CustomerDashboardComponent implements OnInit {
   }
 
   loadOrders(): void {
-    this.orderService.getOrders().subscribe(
+    this.orderService.getCustomerOrders().subscribe(
       (orders) => this.orders = orders,
       (error) => console.error('Failed to load orders', error)
     );
