@@ -38,14 +38,14 @@ export class AuthService {
       tap((response: any) => {
         localStorage.setItem('token', response.token);
         localStorage.setItem('role', response.role);
+        localStorage.setItem('id', response.id);
       }),
       catchError(this.handleError)
     );
   }
 
   logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('role');
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 
@@ -60,6 +60,10 @@ export class AuthService {
 
   getrole(): string | null {
     return localStorage.getItem('role');
+  }
+
+  getId(): string | null {
+    return localStorage.getItem('id');
   }
 
   getLoggedInStatus(): Observable<boolean> {
