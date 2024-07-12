@@ -1,0 +1,38 @@
+.admin-dashboard-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .admin-dashboard-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-dashboard-container .stats {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .admin-dashboard-container .stat {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+  }
+  
+  .admin-dashboard-container .stat h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .admin-dashboard-container .stat p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
