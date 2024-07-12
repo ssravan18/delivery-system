@@ -31,8 +31,7 @@ export class OrderPlacementComponent implements OnInit {
       pickupAddress: ['', Validators.required],
       pickupPincode: ['', Validators.required],
       deliveryAddress: ['', Validators.required],
-      orderStatus: ['order placed', ],
-      feedback: ['']
+      orderStatus: ['order placed', ]
     });
   }
 

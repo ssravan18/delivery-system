@@ -8,6 +8,5 @@ export class Order {
     deliveryAddress!: string;
     deliveryTime!: string;
     orderStatus!: string;
-    feedback!: string;
   }
   

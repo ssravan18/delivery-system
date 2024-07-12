@@ -12,6 +12,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { PartnersComponent } from './common/partners/partners.component';
 import { CustomerNavbarComponent } from './customer/customer-navbar/customer-navbar.component';
 import { DriverNavbarComponent } from './driver/driver-navbar/driver-navbar.component';
 import { ServicesComponent } from './common/services/services.component';
+import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { ServicesComponent } from './common/services/services.component';
     ReportsComponent,
     DriverSignupComponent,
     DriverNavbarComponent,
-    ServicesComponent
+    ServicesComponent,
+    AdminNavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +81,8 @@ import { ServicesComponent } from './common/services/services.component';
     MatInputModule,
     MatSelectModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTableDataSource
   ],
   providers: [],
   bootstrap: [AppComponent]

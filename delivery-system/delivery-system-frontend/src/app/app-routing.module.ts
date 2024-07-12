@@ -14,6 +14,7 @@ import { ServicesComponent } from './common/services/services.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RoleGuard } from './guards/role.guard';
 import { DriverNavbarComponent } from './driver/driver-navbar/driver-navbar.component';
+import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,6 +30,8 @@ const routes: Routes = [
   { path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard, RoleGuard], data: { role: 'customer' } },
 
   { path: 'd-dashboard', component: DriverNavbarComponent, canActivate: [AuthGuard, RoleGuard], data: { role: 'driver' } },
+
+  { path: 'a-dashboard', component: AdminDashboardComponent },
 
   { path: '**', component: PageNotFoundComponent }
 ];
