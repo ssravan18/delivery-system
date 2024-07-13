@@ -1,0 +1,31 @@
+<div class="main">
+    <app-admin-navbar></app-admin-navbar>
+    <div class="order-management-container">
+      <h2>Order Management</h2>
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Package Type</th>
+            <th>Package Weight</th>
+            <th>Pickup Address</th>
+            <th>Pickup Pincode</th>
+            <th>Delivery Address</th>
+            <th>Order Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td>{{ order.id }}</td>
+            <td>{{ order.packageType }}</td>
+            <td>{{ order.packageWeight }}</td>
+            <td>{{ order.pickupAddress }}</td>
+            <td>{{ order.pickupPincode }}</td>
+            <td>{{ order.deliveryAddress }}</td>
+            <td>{{ order.orderStatus }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

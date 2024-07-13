@@ -1,0 +1,57 @@
+.main {
+    height: 100%;
+}
+
+
+.order-management-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.order-management-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.order-management-container .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.order-management-container .orders-table th,
+.order-management-container .orders-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.order-management-container .orders-table th {
+    background-color: #f2f2f2;
+}
+
+.order-management-container .orders-table td button {
+    margin-right: 5px;
+}
+
+.order-management-container .btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.order-management-container .btn-primary {
+    background: #007bff;
+    color: #fff;
+}
+
+.order-management-container .btn-danger {
+    background: #dc3545;
+    color: #fff;
+}

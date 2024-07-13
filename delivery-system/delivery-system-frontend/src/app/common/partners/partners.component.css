@@ -1,0 +1,38 @@
+.partners-container {
+  background-color: #3281ee;
+  background-image: url('../../../assets/driver.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  text-align: center;
+  padding: 200px;
+  padding-top: 144px;
+  padding-left: 150px;
+}
+
+mat-card {
+  width: 400px;
+  margin-left: 750px;
+  box-shadow: 0 0px 10px solid black; 
+}
+
+.partners-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.partners-container p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+button{
+  padding: 7px 10px 7px 10px;
+  border-radius: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(97, 152, 240);
+}
+button:hover{
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}

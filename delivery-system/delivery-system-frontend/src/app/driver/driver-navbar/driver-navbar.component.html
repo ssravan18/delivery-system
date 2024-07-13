@@ -1,0 +1,12 @@
+<mat-toolbar class="main">
+    <a href="" class="app-title">Delivery Management System</a>
+    <span class="spacer"></span>
+    <div>
+        <button mat-button routerLink="/c-dashboard">Dashboard</button>
+        <button mat-button routerLink="/order-placement">place Order</button>
+        <button mat-button routerLink="/track-order">order tracking</button>
+        <button mat-button routerLink="/feedback">feedback</button>
+        
+        <button mat-button (click)="logout()">logout</button>
+    </div>
+</mat-toolbar>
