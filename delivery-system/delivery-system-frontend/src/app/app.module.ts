@@ -31,6 +31,9 @@ import { CustomerManagementComponent } from './admin/customer-management/custome
 import { DriverManagementComponent } from './admin/driver-management/driver-management.component';
 import { ReportsComponent } from './admin/reports/reports.component';
 import { DriverSignupComponent } from './driver/driver-signup/driver-signup.component';
+import { DriverDashboardComponent } from './driver/driver-dashboard/driver-dashboard.component';
+import { DriverOrderStatusComponent } from './driver/driver-order-status/driver-order-status.component';
+import { DriverProfileComponent } from './driver/driver-profile/driver-profile.component';
 import { PartnersComponent } from './common/partners/partners.component';
 import { CustomerNavbarComponent } from './customer/customer-navbar/customer-navbar.component';
 import { DriverNavbarComponent } from './driver/driver-navbar/driver-navbar.component';
@@ -58,6 +61,9 @@ import { OrderManagementComponent } from './admin/order-management/order-managem
 
     DriverSignupComponent,
     DriverNavbarComponent,
+    DriverDashboardComponent,
+    DriverOrderStatusComponent,
+    DriverProfileComponent,
 
     AdminDashboardComponent,
     CustomerManagementComponent,
