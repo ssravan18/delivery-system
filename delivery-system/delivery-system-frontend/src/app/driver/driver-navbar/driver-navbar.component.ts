@@ -1,11 +1,23 @@
-// driver-navbar.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-driver-navbar',
   templateUrl: './driver-navbar.component.html',
   styleUrls: ['./driver-navbar.component.css']
 })
-export class DriverNavbarComponent {
-  // Component logic here
+export class DriverNavbarComponent implements OnInit {
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+
+  ngOnInit(): void {
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+
 }
