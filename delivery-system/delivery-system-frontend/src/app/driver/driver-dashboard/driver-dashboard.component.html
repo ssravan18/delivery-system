@@ -1,0 +1,24 @@
+<div class="driver-dashboard">
+    <h2>Driver Dashboard</h2>
+    <div *ngIf="orders.length > 0">
+      <div *ngFor="let order of orders" class="order-card">
+        <h3>Order ID: {{order.id}}</h3>
+        <p>Package Type: {{order.packageType}}</p>
+        <p>Package Weight: {{order.packageWeight}}</p>
+        <p>Pickup Address: {{order.pickupAddress}}</p>
+        <p>Pickup Pincode: {{order.pickupPincode}}</p>
+        <p>Delivery Address: {{order.deliveryAddress}}</p>
+        <p>Status: {{order.status}}</p>
+        <select [(ngModel)]="order.status">
+          <option value="pending">Pending</option>
+          <option value="in-transit">In Transit</option>
+          <option value="delivered">Delivered</option>
+        </select>
+        <button mat-button color="accent" (click)="updateOrderStatus(order.id, order.status)">Update Status</button>
+      </div>
+    </div>
+    <div *ngIf="orders.length === 0">
+      <p>No orders available.</p>
+    </div>
+  </div>
+  

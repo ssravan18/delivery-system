@@ -1,0 +1,69 @@
+<div class="signup-container">
+  <mat-card>
+    <mat-card-title>Driver Sign Up</mat-card-title>
+    <mat-card-content>
+      <form class="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <mat-form-field class="half-width" appearance="fill">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="Name">
+            <mat-error *ngIf="signupForm.get('Name')?.hasError('required')">Full Name is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="half-width" appearance="fill">
+            <mat-label>User Id (must be unique)</mat-label>
+            <input matInput formControlName="Userid">
+            <mat-error *ngIf="signupForm.get('Userid')?.hasError('required')">User Id is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field class="half-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="signupForm.get('email')?.hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="signupForm.get('email')?.hasError('email')">Invalid email format</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="half-width" appearance="fill">
+            <mat-label>Phone number</mat-label>
+            <input matInput formControlName="phoneNumber">
+            <mat-error *ngIf="signupForm.get('phoneNumber')?.hasError('required')">Phone number is required</mat-error>
+            <mat-error *ngIf="signupForm.get('phoneNumber')?.hasError('pattern')">Invalid phone number format</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field class="half-width" appearance="fill">
+            <mat-label>driving License</mat-label>
+            <input matInput formControlName="dl">
+            <mat-error *ngIf="signupForm.get('dl')?.hasError('required')">driving License is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="half-width" appearance="fill">
+            <mat-label>Pin code</mat-label>
+            <input matInput formControlName="Pincode">
+            <mat-error *ngIf="signupForm.get('Pincode')?.hasError('required')">Pin code is required</mat-error>
+            <mat-error *ngIf="signupForm.get('Pincode')?.hasError('pattern')">Invalid Pin code format</mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-error *ngIf="signupForm.get('password')?.hasError('required')">Password is required</mat-error>
+          <mat-error *ngIf="signupForm.get('password')?.hasError('minlength')">Password must be at least 6 characters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password" formControlName="confirmPassword">
+          <mat-error *ngIf="signupForm.get('confirmPassword')?.hasError('required')">Confirm Password is required</mat-error>
+          <mat-error *ngIf="signupForm.get('confirmPassword')?.hasError('passwordMismatch')">Passwords must match</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="signupForm.invalid">Sign Up</button><br>
+        <p id="login">Already have an account? <a routerLink="/login">Login here</a></p>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
