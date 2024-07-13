@@ -1,1 +1,12 @@
-<p>driver-navbar works!</p>
+<mat-toolbar class="main">
+    <a href="" class="app-title">HYPER Delivery</a>
+    <span class="spacer"></span>
+    <div>
+        <button mat-button routerLink="/d-dashboard">Dashboard</button>
+
+        <button mat-button routerLink="/order-status">order Status</button>
+        <button mat-button routerLink="/d-profile">profile</button>
+        
+        <button mat-button (click)="logout()">logout</button>
+    </div>
+</mat-toolbar>
