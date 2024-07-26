@@ -1,0 +1,132 @@
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.features {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.features .heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.features li {
+  background: #fff;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  flex: 1 1 30%;
+  max-width: 30%;
+  box-sizing: border-box;
+}
+
+.features li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.features h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+  color: #3f51b5;
+}
+
+.features p {
+  margin: 0;
+  color: #555;
+}
+
+/* Why Choose Us Section */
+.why {
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.why .title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.why .header {
+  font-size: 2.5rem;
+  color: #0056b3;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-item {
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  color: #0056b3;
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+
+  .features ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features li {
+    width: 80%;
+    max-width: 100%;
+  }
+
+  .why .header {
+    font-size: 2rem;
+  }
+
+  .feature-title {
+    font-size: 1.2rem;
+  }
+
+  .feature-description {
+    font-size: 0.9rem;
+  }
+}

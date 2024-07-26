@@ -1,0 +1,16 @@
+<div class="main">
+  <h1 mat-dialog-title>Update Order Status</h1>
+  <div mat-dialog-content>
+    <p>Current status: {{data.order.orderStatus}}</p>
+    <mat-form-field>
+      <mat-label>New Status</mat-label>
+      <mat-select [(value)]="newStatus">
+        <mat-option *ngFor="let status of statuses" [value]="status">{{status}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="newStatus" cdkFocusInitial>Update</button>
+  </div>
+</div>

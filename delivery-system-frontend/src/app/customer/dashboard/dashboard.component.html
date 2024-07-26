@@ -1,0 +1,39 @@
+<div class="main">
+  <app-customer-navbar></app-customer-navbar>
+  <div class="customer-dashboard-container">
+    <h2>hello {{id}}</h2>
+    <div *ngIf="orders.length > 0; else noOrders">
+      <div class="order-management-container">
+        <h2>Your Orders</h2>
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Package Type</th>
+              <th>Package Weight</th>
+              <th>Pickup Address</th>
+              <th>Pickup Pincode</th>
+              <th>Delivery Address</th>
+              <th>Order Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders">
+              <td>{{ order.id }}</td>
+              <td>{{ order.packageType }}</td>
+              <td>{{ order.packageWeight }}</td>
+              <td>{{ order.pickupAddress }}</td>
+              <td>{{ order.pickupPincode }}</td>
+              <td>{{ order.deliveryAddress }}</td>
+              <td>{{ order.orderStatus }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <ng-template #noOrders>
+      <p class="no-orders">You have no orders. Place a new order to get started!</p>
+    </ng-template>
+
+  </div>
+</div>

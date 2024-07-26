@@ -1,0 +1,24 @@
+<div class="main">
+  <app-admin-navbar></app-admin-navbar>
+  <div class="container">
+    <h2>Admin Management</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Admin ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let admin of admins">
+          <td>{{ admin.id }}</td>
+          <td>{{ admin.name }}</td>
+          <td>{{ admin.email }}</td>
+          <td>{{ admin.role }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

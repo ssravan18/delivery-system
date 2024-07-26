@@ -1,0 +1,38 @@
+
+.admin-dashboard-container {
+  height: 70%;
+  padding: 20px;
+}
+
+.status {
+  margin-top: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.status-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.status-item {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+.status-title {
+  font-size: 2em;
+  color: #333;
+}
+
+.status-description {
+  color: #666;
+}

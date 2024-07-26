@@ -1,0 +1,24 @@
+<div class="main">
+  <app-admin-navbar></app-admin-navbar>
+  <div class="customer-management-container">
+    <h2>Customer Management</h2>
+    <table class="customers-table">
+      <thead>
+        <tr>
+          <th>Customer Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{ customer.id }}</td>
+          <td>{{ customer.name }}</td>
+          <td>{{ customer.email }}</td>
+          <td>{{ customer.phone }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

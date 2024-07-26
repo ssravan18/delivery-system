@@ -1,0 +1,45 @@
+.main {
+  height: 100%;
+}
+
+.order-tracking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Full viewport height for vertical centering */
+  background-color: #f5f5f5;
+  /* Optional: light background color */
+}
+
+mat-card {
+  width: 100%;
+  max-width: 600px;
+  /* Limit the card's maximum width */
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Optional: add some shadow for better appearance */
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+  /* Spacing between fields */
+}
+
+button {
+  width: 100%;
+  /* Make the button full width */
+}
+
+.order-status {
+  margin-top: 20px;
+}
+
+.order-status h3 {
+  margin-bottom: 10px;
+}
+
+.status{
+  font-size: 20px;
+}

@@ -1,0 +1,28 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="admin-dashboard-container">
+
+  <div class="status">
+    <div class="title">
+      <h2 class="header">Current Status of Customers, Drivers and Orders</h2>
+    </div>
+    <div class="status-grid">
+      <div class="status-item">
+        <h3 class="status-title">{{ customerCount }}</h3>
+        <p class="status-description">Customers</p>
+      </div>
+      <div class="status-item">
+        <h3 class="status-title">{{ orderCount - deliveredOrderCount }}</h3>
+        <p class="status-description">Current Orders</p>
+      </div>
+      <div class="status-item">
+        <h3 class="status-title">{{ deliveredOrderCount }}</h3>
+        <p class="status-description">Orders Delivered</p>
+      </div>
+      <div class="status-item">
+        <h3 class="status-title">{{ driverCount }}</h3>
+        <p class="status-description">Drivers</p>
+      </div>
+    </div>
+  </div>
+
+</div>

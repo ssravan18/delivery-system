@@ -1,0 +1,15 @@
+<div class="main">
+    <app-driver-navbar></app-driver-navbar>
+    <div class="driver-profile-container">
+        <h2>Driver Profile</h2>
+        <div *ngIf="driver">
+            <p><strong>Name:</strong> {{ driver.name }}</p>
+            <p><strong>Email:</strong> {{ driver.email }}</p>
+            <p><strong>Phone:</strong> {{ driver.phone }}</p>
+            <p><strong>Vehicle:</strong> {{ driver.drivingLicense }}</p>
+        </div>
+        <div *ngIf="!driver">
+            <p>Loading driver information...</p>
+        </div>
+    </div>
+</div>

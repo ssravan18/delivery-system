@@ -1,0 +1,27 @@
+.pagenotfound {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 100px;
+    margin-bottom: 3cap;
+    height: 100%;
+  }
+  
+  .pagenotfound h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .pagenotfound p {
+    margin-bottom: 20px;
+  }
+  
+  .pagenotfound a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  .pagenotfound a:hover {
+    text-decoration: underline;
+  }
+  

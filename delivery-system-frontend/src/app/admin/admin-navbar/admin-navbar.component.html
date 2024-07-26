@@ -1,0 +1,13 @@
+<mat-toolbar class="main">
+    <a href="" class="app-title">HYPER Delivery</a>
+    <span class="spacer"></span>
+    <div>
+      <button mat-button routerLink="/a-dashboard">Dashboard</button>
+      <!-- <button mat-button *ngIf="isMainAdmin" routerLink="/add-admin">Add Admin</button>
+      <button mat-button routerLink="/admin-details">Admins</button> -->
+      <button mat-button routerLink="/customer-details">customers</button>
+      <button mat-button routerLink="/order-details">orders</button>
+      <button mat-button routerLink="/driver-details">drivers</button>
+      <button mat-button (click)="logout()">logout</button>
+    </div>
+  </mat-toolbar>
