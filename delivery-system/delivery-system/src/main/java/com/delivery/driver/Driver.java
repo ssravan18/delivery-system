@@ -1,9 +1,6 @@
 package com.delivery.driver;
 
 import jakarta.persistence.*;
-import java.util.List;
-
-import com.delivery.orders.Orders;
 
 @Entity
 @Table(name = "drivers")
@@ -24,15 +21,15 @@ public class Driver {
 
     @Column(name = "phone", nullable = false)
     private String phone;
+    
+    @Column(name = "vehicle", nullable = false)
+    private String vehicle;
 
     @Column(name = "Driving_license", nullable = false)
     private String drivingLicense;
     
     @Column(name = "pincode", nullable = false)
     private int pincode;
-
-    @OneToMany(mappedBy = "driver")
-    private List<Orders> orders;
 
     // Getters and setters
     
@@ -76,14 +73,6 @@ public class Driver {
 		this.phone = phone;
 	}
 
-	public List<Orders> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Orders> orders) {
-		this.orders = orders;
-	}
-
 	public String getDrivingLicense() {
 		return drivingLicense;
 	}
@@ -98,6 +87,14 @@ public class Driver {
 
 	public void setPincode(int pincode) {
 		this.pincode = pincode;
+	}
+
+	public String getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
 	}
 
 

@@ -1,5 +1,7 @@
 package com.delivery.security;
 
+import com.delivery.admin.Admin;
+import com.delivery.admin.AdminRepository;
 import com.delivery.customer.Customer;
 import com.delivery.customer.CustomerRepository;
 import com.delivery.driver.Driver;
@@ -21,6 +23,9 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     @Autowired
     private DriverRepository driverRepository;
+    
+    @Autowired
+    private AdminRepository adminRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -32,6 +37,11 @@ public class JwtUserDetailsService implements UserDetailsService {
         Driver driver = driverRepository.findByEmail(email);
         if (driver != null) {
             return new org.springframework.security.core.userdetails.User(driver.getEmail(), driver.getPassword(), new ArrayList<>());
+        }
+        
+        Admin admin = adminRepository.findByEmail(email);
+        if (admin != null) {
+            return new org.springframework.security.core.userdetails.User(admin.getEmail(), admin.getPassword(), new ArrayList<>());
         }
 
         throw new UsernameNotFoundException("User not found with username: " + email);

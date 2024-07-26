@@ -61,14 +61,18 @@ public class JwtAuthenticationController {
         // Determine if the user is a customer or a driver
         String role;
         String id;
-        Customer customer = customerRepository.findByEmail(jwtRequest.getEmail());
-        if (customer != null) {
+        if (customerRepository.findByEmail(jwtRequest.getEmail()) != null) {
+        	Customer customer = customerRepository.findByEmail(jwtRequest.getEmail());
         	id = customer.getId();
             role = "customer";
         } else if (driverRepository.findByEmail(jwtRequest.getEmail()) != null) {
         	Driver driver = driverRepository.findByEmail(jwtRequest.getEmail());
         	id = driver.getId();
             role = "driver";
+        } else if (adminRepository.findByEmail(jwtRequest.getEmail()) != null) {
+        	Admin admin = adminRepository.findByEmail(jwtRequest.getEmail());
+        	id = admin.getId();
+        	role = admin.getRole();
         } else {
             throw new Exception("User role not found");
         }
@@ -86,8 +90,20 @@ public class JwtAuthenticationController {
         }
         
     }
-
-
+    
+    @PostMapping("/admin/add-admin")
+    public ResponseEntity<?> registerAdmin(@RequestBody Admin admin) throws Exception {
+    	if (adminRepository.findByEmail(admin.getEmail()) != null) {
+            throw new Exception("Customer with username " + admin.getEmail() + " already exists");
+        }
+    	admin.setRole("admin");
+        admin.setPassword(passwordEncoder.encode(admin.getPassword()));
+        adminRepository.save(admin);
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "admin registered successfully");
+        return ResponseEntity.ok(response);
+    }
+    
     @PostMapping("/signup/customer")
     public ResponseEntity<?> registerCustomer(@RequestBody Customer customer) throws Exception {
         if (customerRepository.findByEmail(customer.getEmail()) != null) {
@@ -98,31 +114,6 @@ public class JwtAuthenticationController {
         Map<String, String> response = new HashMap<>();
         response.put("message", "Customer registered successfully");
         return ResponseEntity.ok(response);
-    }
-    
-    @PostMapping("/signup/admin")
-    public ResponseEntity<?> registerAdmin(@RequestBody Admin admin, @RequestHeader("Authorization") String authHeader) throws Exception {
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            throw new Exception("Invalid or missing authorization header");
-        }
-
-        String token = authHeader.substring(7); // Extract token without "Bearer " prefix
-        String requesterEmail = jwtTokenUtil.getUsernameFromToken(token); // Extract the email from the token
-
-        Admin mainAdmin = adminRepository.findByRole("MAIN_ADMIN");
-        if (mainAdmin == null) {
-            // This means no main admin exists, so the first admin will be the main admin
-            admin.setRole("MAIN_ADMIN");
-        } else {
-            Admin requester = adminRepository.findByEmail(requesterEmail);
-            if (requester == null || !"MAIN_ADMIN".equals(requester.getRole())) {
-                throw new Exception("Only the main admin can register new admins");
-            }
-            admin.setRole("ADMIN");
-        }
-        admin.setPassword(passwordEncoder.encode(admin.getPassword()));
-        adminRepository.save(admin);
-        return ResponseEntity.ok("Admin registered successfully");
     }
 
     @PostMapping("/signup/driver")

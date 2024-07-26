@@ -3,8 +3,8 @@ package com.delivery.customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.delivery.orders.Orders;
-import com.delivery.orders.OrdersRepository;
+import com.delivery.order.Order;
+import com.delivery.order.OrderRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +16,7 @@ public class CustomerService {
     private CustomerRepository customerRepository;
 
     @Autowired
-    private OrdersRepository ordersRepository;
+    private OrderRepository ordersRepository;
     
     // Get all customers
     public List<Customer> getAllCustomers() {
@@ -53,12 +53,17 @@ public class CustomerService {
         customerRepository.deleteById(id);
     }
 
-    public Optional<Orders> getCustomerOrders(String customerId) {
+    public Optional<Order> getCustomerOrders(String customerId) {
         Customer customer = customerRepository.findById(customerId).orElse(null);
         if (customer != null) {
             return ordersRepository.findById(customerId);
         }
         return null;
     }
+    
+    public long count() {
+        return customerRepository.count();
+    }
+    
 }
 

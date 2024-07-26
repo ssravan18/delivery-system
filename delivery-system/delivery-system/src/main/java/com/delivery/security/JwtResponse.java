@@ -13,7 +13,6 @@ public class JwtResponse implements Serializable {
         this.jwttoken = jwttoken;
         this.role = role;
         this.id = id;
-        
     }
 
     public String getToken() {

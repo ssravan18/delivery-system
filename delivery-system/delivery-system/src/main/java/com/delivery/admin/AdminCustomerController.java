@@ -9,7 +9,7 @@ import com.delivery.customer.Customer;
 import com.delivery.customer.CustomerService;
 import com.delivery.feedback.Feedback;
 import com.delivery.feedback.FeedbackService;
-import com.delivery.orders.Orders;
+import com.delivery.order.Order;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,8 +32,8 @@ public class AdminCustomerController {
     }
 
     @GetMapping("/{id}/orders")
-    public ResponseEntity<Optional<Orders>> getCustomerOrders(@PathVariable("id") String id) {
-        Optional<Orders> orders = customerService.getCustomerOrders(id);
+    public ResponseEntity<Optional<Order>> getCustomerOrders(@PathVariable("id") String id) {
+        Optional<Order> orders = customerService.getCustomerOrders(id);
         return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 

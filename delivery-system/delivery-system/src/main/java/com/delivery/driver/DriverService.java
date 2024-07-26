@@ -46,4 +46,9 @@ public class DriverService {
     public void deleteDriver(String id) {
         driverRepository.deleteById(id);
     }
+    
+    public long count() {
+        return driverRepository.count();
+    }
+    
 }

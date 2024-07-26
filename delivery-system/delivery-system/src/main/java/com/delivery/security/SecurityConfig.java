@@ -58,7 +58,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authz -> authz
                 .requestMatchers("/login", "/signup/customer", "/signup/driver").permitAll()
-                .requestMatchers("/signup/admin").hasRole("MAIN_ADMIN")
+                .requestMatchers("/admin/add-admin").hasRole("main_admin")
                 .requestMatchers(HttpMethod.GET, "/orders/**", "/customers/**", "/drivers/**","/admin/**").authenticated()
                 .requestMatchers(HttpMethod.POST, "/orders/**").authenticated()
                 .requestMatchers(HttpMethod.PUT, "/orders/**").authenticated()

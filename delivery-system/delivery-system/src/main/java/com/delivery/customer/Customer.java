@@ -1,9 +1,6 @@
 package com.delivery.customer;
 
 import jakarta.persistence.*;
-import java.util.List;
-
-import com.delivery.orders.Orders;
 
 @Entity
 @Table(name = "customers")
@@ -25,9 +22,6 @@ public class Customer {
     @Column(name = "phone", nullable = false)
     private String phone;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Orders> orders;
-    
     // Getters and setters
 
 	public String getId() {
@@ -70,12 +64,5 @@ public class Customer {
 		this.phone = phone;
 	}
 
-	public List<Orders> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Orders> orders) {
-		this.orders = orders;
-	}
 
 }

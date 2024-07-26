@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "admin")
+@Table(name = "admins")
 public class Admin {
 
     @Id
@@ -26,7 +26,7 @@ public class Admin {
         this.id = id;
     }
 
-    public String getEmal() {
+    public String getEmail() {
         return email;
     }
 

@@ -1,7 +1,7 @@
 package com.delivery.feedback;
 
 import com.delivery.customer.Customer;
-import com.delivery.orders.Orders;
+import com.delivery.order.Order;
 
 import jakarta.persistence.*;
 
@@ -18,7 +18,7 @@ public class Feedback {
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
-    private Orders order;
+    private Order order;
 
     @Column(name = "feedback", nullable = false)
     private String feedback;
@@ -43,11 +43,11 @@ public class Feedback {
         this.customer = customer;
     }
 
-    public Orders getOrder() {
+    public Order getOrder() {
         return order;
     }
 
-    public void setOrder(Orders order) {
+    public void setOrder(Order order) {
         this.order = order;
     }
 
