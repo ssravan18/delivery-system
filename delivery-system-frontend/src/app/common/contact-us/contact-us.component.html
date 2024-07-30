@@ -1,0 +1,38 @@
+<div class="body">
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <main>
+        <section>
+            <p>If you have any questions or concerns, please don't hesitate to contact us. You can reach us using the
+                form below or through our contact information provided.</p>
+        </section>
+        <section>
+            <h2>Contact Form</h2>
+            <form action="/submit-contact-form" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        <section>
+            <h2>Contact Information</h2>
+            <p>You can also reach us at:</p>
+            <ul>
+                <li>Email: <a href="mailto:support@hyperdelivery.com">support@hyperdelivery.com</a></li>
+                <li>Phone: +1 (123) 456-7890</li>
+                <li>Address: 123 XXX</li>
+            </ul>
+        </section>
+    </main>
+</div>

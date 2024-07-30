@@ -43,6 +43,8 @@ import { DriverProfileComponent } from './driver/driver-profile/driver-profile.c
 import { OrderStatusDialogComponent } from './driver/order-status-dialog/order-status-dialog.component';
 import { AddAdminComponent } from './admin/add-admin/add-admin.component';
 import { AdminDetailsComponent } from './admin/admin-details/admin-details.component';
+import { AboutUsComponent } from './common/about-us/about-us.component';
+import { ContactUsComponent } from './common/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { AdminDetailsComponent } from './admin/admin-details/admin-details.compo
     AdminNavbarComponent,
     OrderManagementComponent,
     AddAdminComponent,
-    AdminDetailsComponent
+    AdminDetailsComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
