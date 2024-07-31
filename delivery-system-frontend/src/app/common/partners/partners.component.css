@@ -1,18 +1,19 @@
 .partners-container {
-  background-color: #3281ee;
-  background-image: url('../../../assets/driver.png');
+  height: 40%;
+  background:
+    url('../../../assets/driver.png') no-repeat,
+    linear-gradient(#757fe7, #e66465);
   background-repeat: no-repeat;
-  background-position: 10px;
+  background-position: 80px 80px, 0 0;
   text-align: center;
-  padding: 200px;
-  padding-top: 144px;
-  padding-left: 150px;
+  padding: 200px 200px;
 }
 
 mat-card {
   width: 400px;
-  margin-left: 750px;
-  box-shadow: 0 0px 10px solid black; 
+  margin-left: 720px;
+  box-shadow: 0 0 10px black;
+  padding: 20px;
 }
 
 .partners-container h2 {
@@ -26,13 +27,19 @@ mat-card {
   margin-bottom: 20px;
 }
 
-button{
-  padding: 7px 10px 7px 10px;
-  border-radius: 0;
-  color: rgb(255, 255, 255);
-  background-color: rgb(97, 152, 240);
+button {
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #757fe7;
+  border: none;
+  /* Ensure no default border */
+  cursor: pointer;
+  /* Add pointer cursor */
 }
-button:hover{
-  color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);
+
+button:hover {
+  color: #fff;
+  background-color: #29343e;
+  box-shadow: 0 0 8px black;
 }

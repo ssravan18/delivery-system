@@ -7,11 +7,16 @@ body {
   box-sizing: border-box;
 }
 
+.main{
+  margin-top: -20px;
+  height: 100%;
+  background: linear-gradient(#757fe7, #e66465);
+}
+
 .features {
-  background-color: #f9f9f9;
   padding: 40px 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   max-width: 1200px;
   margin: 20px auto;
 }
@@ -19,7 +24,7 @@ body {
 .features .heading {
   text-align: center;
   font-size: 2.5rem;
-  color: #0056b3;
+  color: #29343e;
   margin-bottom: 20px;
 }
 
@@ -32,7 +37,7 @@ body {
 }
 
 .features li {
-  background: #fff;
+  background: #ffffff;
   margin: 10px;
   padding: 20px;
   border-radius: 8px;
@@ -62,7 +67,6 @@ body {
 /* Why Choose Us Section */
 .why {
   padding: 2rem;
-  background-color: #fff;
 }
 
 .why .title {
@@ -72,7 +76,7 @@ body {
 
 .why .header {
   font-size: 2.5rem;
-  color: #0056b3;
+  color: #29343e;
 }
 
 .features-grid {

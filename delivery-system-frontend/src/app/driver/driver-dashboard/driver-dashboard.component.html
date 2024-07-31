@@ -1,17 +1,15 @@
 <app-driver-navbar></app-driver-navbar>
 <div class="main">
   <div class="driver-dashboard-container">
-    <h2>hello {{id}}</h2>
-    <h2>Your Assigned Orders</h2>
     <div *ngIf="orders.length > 0; else noOrders">
       <div class="order-management-container">
-        <h2>Your Orders</h2>
+        <h2>Your Assigned Orders</h2>
         <table class="orders-table">
           <thead>
             <tr>
               <th>ID</th>
               <th>Package Type</th>
-              <th>Package Weight</th>
+              <th>Weight(in Kgs)</th>
               <th>Pickup Address</th>
               <th>Pickup Pincode</th>
               <th>Delivery Address</th>

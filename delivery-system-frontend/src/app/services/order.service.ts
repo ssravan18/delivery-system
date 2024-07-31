@@ -57,6 +57,7 @@ export class OrderService {
   }
   updateOrderStatus(orderId: string, orderStatus: string): Observable<Order> {
     const url = `${this.baseUrl}/${orderId}/status`;
+    console.log(orderStatus);
     return this.http.patch<Order>(url, { orderStatus }, { headers: this.headers });
   }
 

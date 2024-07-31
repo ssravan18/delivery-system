@@ -1,7 +1,14 @@
-
 .admin-dashboard-container {
   height: 70%;
   padding: 20px;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); 
+}
+
+mat-card{
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px !important; 
 }
 
 .status {
@@ -20,7 +27,8 @@
 }
 
 .status-item {
-  background: #f4f4f4;
+  color: #fff;
+  background: #1b1b1b;
   padding: 20px;
   border-radius: 8px;
   width: 200px;
@@ -30,9 +38,13 @@
 
 .status-title {
   font-size: 2em;
-  color: #333;
+  color: #fff;
 }
 
 .status-description {
-  color: #666;
+  color: #d2d1d1;
+}
+
+.status-item:hover{
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 5px 2.6px;
 }

@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AdminNavbarComponent implements OnInit {
   isMainAdmin!: boolean;
+  id : string|null = localStorage.getItem('id');
 
   constructor(private authService: AuthService, private router: Router) {
     this.isMainAdmin = localStorage.getItem('role') == 'main_admin';

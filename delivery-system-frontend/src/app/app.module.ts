@@ -31,7 +31,7 @@ import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { CustomerManagementComponent } from './admin/customer-management/customer-management.component';
 import { DriverManagementComponent } from './admin/driver-management/driver-management.component';
 import { ReportsComponent } from './admin/reports/reports.component';
-import { DriverSignupComponent } from './driver/driver-signup/driver-signup.component';
+import { DriverSignupComponent } from './authentication/driver-signup/driver-signup.component';
 import { PartnersComponent } from './common/partners/partners.component';
 import { CustomerNavbarComponent } from './customer/customer-navbar/customer-navbar.component';
 import { DriverNavbarComponent } from './driver/driver-navbar/driver-navbar.component';

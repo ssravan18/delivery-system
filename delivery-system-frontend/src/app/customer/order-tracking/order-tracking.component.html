@@ -10,11 +10,11 @@
             <input matInput formControlName="orderId">
             <mat-error *ngIf="trackingForm.get('orderId')?.invalid">Order ID is required</mat-error>
           </mat-form-field>
+          <div *ngIf="orderStatus" class="order-status">
+            <p class="status">Order Status of {{id}}: <b>"{{ orderStatus }}"</b></p>
+          </div>
           <button mat-raised-button color="primary" type="submit" [disabled]="trackingForm.invalid">Track</button>
         </form>
-        <div *ngIf="orderStatus" class="order-status">
-          <p class="status"><b>{{ orderStatus }}</b></p>
-        </div>
       </mat-card-content>
     </mat-card>
   </div>

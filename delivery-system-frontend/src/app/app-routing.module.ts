@@ -9,7 +9,7 @@ import { OrderPlacementComponent } from './customer/order-placement/order-placem
 import { OrderTrackingComponent } from './customer/order-tracking/order-tracking.component';
 import { FeedbackComponent } from './customer/feedback/feedback.component';
 import { PartnersComponent } from './common/partners/partners.component';
-import { DriverSignupComponent } from './driver/driver-signup/driver-signup.component';
+import { DriverSignupComponent } from './authentication/driver-signup/driver-signup.component';
 import { ServicesComponent } from './common/services/services.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RoleGuard } from './guards/role.guard';

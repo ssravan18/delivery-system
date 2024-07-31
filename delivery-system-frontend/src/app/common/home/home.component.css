@@ -28,10 +28,11 @@
 button{
   padding: 7px 10px 7px 10px;
   margin: 270px;
-  margin-left: 700px;
-  border-radius: 0;
+  margin-left: 720px;
+  border-radius: 3px;
+  box-shadow: 0 0 8px black;
 }
 button:hover{
   color: rgb(255, 255, 255);
-  background-color: rgb(97, 152, 240);
+  background-color: #29343e;
 }

@@ -12,7 +12,7 @@ import { OrderService } from 'src/app/services/order.service';
 export class CustomerDashboardComponent implements OnInit {
   orders: Order[] = [];
   errorMessage: string = '';
-  id: string|null = localStorage.getItem('id');
+
 
   constructor(
     private router: Router, 

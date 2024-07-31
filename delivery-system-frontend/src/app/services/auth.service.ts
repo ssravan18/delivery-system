@@ -50,7 +50,7 @@ export class AuthService {
     localStorage.clear();
     this.authStatus.next(false);
     this.userRole.next(null);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 
   isAuthenticated(): boolean {

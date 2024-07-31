@@ -12,9 +12,8 @@ import { OrderStatusDialogComponent } from '../order-status-dialog/order-status-
 export class DriverDashboardComponent implements OnInit {
   orders: Order[] = [];
   errorMessage: string = '';
-  id : string|null = localStorage.getItem('id');
 
-  constructor(private orderService: OrderService, public dialog: MatDialog) {}
+  constructor(private orderService: OrderService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getDriverOrders();

@@ -11,6 +11,7 @@ import { Order } from 'src/app/models/Order'; // Ensure you have the Order inter
 export class OrderTrackingComponent implements OnInit {
   trackingForm: FormGroup;
   orderStatus: string | null = null;
+  id!: string;
 
   constructor(
     private fb: FormBuilder,
@@ -25,8 +26,8 @@ export class OrderTrackingComponent implements OnInit {
 
   onTrack(): void {
     if (this.trackingForm.valid) {
-      const orderId = this.trackingForm.get('orderId')?.value;
-      this.orderService.tackOrder(orderId).subscribe(
+      this.id = this.trackingForm.get('orderId')?.value;
+      this.orderService.tackOrder(this.id).subscribe(
         (order) => {
           if (order !== null) {
             this.orderStatus = order.orderStatus;

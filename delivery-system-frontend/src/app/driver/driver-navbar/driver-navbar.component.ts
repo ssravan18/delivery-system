@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./driver-navbar.component.css']
 })
 export class DriverNavbarComponent implements OnInit {
-
+  id : string|null = localStorage.getItem('id');
   constructor(private authService: AuthService, private router: Router) {}
 
 

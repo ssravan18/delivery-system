@@ -1,7 +1,6 @@
 <div class="main">
   <app-customer-navbar></app-customer-navbar>
   <div class="customer-dashboard-container">
-    <h2>hello {{id}}</h2>
     <div *ngIf="orders.length > 0; else noOrders">
       <div class="order-management-container">
         <h2>Your Orders</h2>
@@ -10,7 +9,7 @@
             <tr>
               <th>ID</th>
               <th>Package Type</th>
-              <th>Package Weight</th>
+              <th>Weight(in Kgs)</th>
               <th>Pickup Address</th>
               <th>Pickup Pincode</th>
               <th>Delivery Address</th>
