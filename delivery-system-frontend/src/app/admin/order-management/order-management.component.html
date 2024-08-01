@@ -14,13 +14,14 @@
             <th>Pickup Pincode</th>
             <th>Delivery Address</th>
             <th>Order Status</th>
+            <th>delivery Time</th>
             <th>Update Order Status</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let order of orders">
             <td>{{ order.id }}</td>
-            <td>{{ order.placedTime }}</td>
+            <td>{{ order.placedTime | date: 'dd-MM-yyyy HH:mm:ss' }}</td>
             <td>{{ order.driverId }}</td>
             <td>{{ order.packageType }}</td>
             <td>{{ order.packageWeight }}</td>
@@ -28,8 +29,9 @@
             <td>{{ order.pickupPincode }}</td>
             <td>{{ order.deliveryAddress }}</td>
             <td>{{ order.orderStatus }}</td>
+            <td>{{ order.deliveryTime | date: 'dd-MM-yyyy HH:mm:ss' }}</td>
             <td>
-              <button mat-raised-button color="primary" (click)="openDialog(order)">Update Status</button>
+              <button mat-raised-button color="primary" (click)="openDialog(order)" [disabled]="isDelivered(order)">Update Status</button>
             </td>
           </tr>
         </tbody>

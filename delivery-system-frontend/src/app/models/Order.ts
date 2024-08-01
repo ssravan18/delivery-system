@@ -4,6 +4,7 @@ export interface Order {
   driverId?: string;
   packageType: string;
   packageWeight: string;
+  amount: number;
   pickupAddress: string;
   pickupPincode: number;
   deliveryAddress: string;

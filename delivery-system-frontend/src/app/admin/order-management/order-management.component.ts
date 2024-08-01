@@ -58,4 +58,8 @@ export class OrderManagementComponent implements OnInit {
       (error) => console.error('Failed to update order status', error)
     );
   }
+
+  isDelivered(order: any): boolean {
+    return order.orderStatus === 'Delivered';
+  }
 }

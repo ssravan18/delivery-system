@@ -18,6 +18,8 @@ interface ordertype {
 
 export class OrderPlacementComponent implements OnInit {
   orderForm: FormGroup;
+  wt! : string;
+  price! : number;
 
   constructor(
     private fb: FormBuilder,
@@ -51,8 +53,8 @@ export class OrderPlacementComponent implements OnInit {
   onSubmit(): void {
     if (this.orderForm.valid) {
       const orderData: Order = this.orderForm.value;
-      console.log('Order Data:', orderData);
-      // Handle order placement logic here (e.g., send data to the server)
+      this.wt = this.orderForm.get('packageWeight')?.value;
+      //Handle the work on pricing
       this.orderService.placeOrder(orderData).subscribe(
         response => {
           console.log('Order placed successfully:', response);
