@@ -14,6 +14,7 @@ public class OrderDTO {
     private String orderStatus;
     private LocalDateTime placedTime;
     private LocalDateTime deliveryTime;
+    private Double price;
     
 //    public OrderDTO(
 //    		String id,
@@ -106,5 +107,11 @@ public class OrderDTO {
 	}
 	public void setDeliveryTime(LocalDateTime deliveryTime) {
 		this.deliveryTime = deliveryTime;
+	}
+	public Double getAmount() {
+		return price;
+	}
+	public void setAmount(Double amount) {
+		this.price = amount;
 	}
 }

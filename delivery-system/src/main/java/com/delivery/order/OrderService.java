@@ -128,6 +128,10 @@ public class OrderService {
         Optional<Order> optionalOrder = orderRepository.findById(id);
         if (optionalOrder.isPresent()) {
             Order order = optionalOrder.get();
+            if(orderStatus.equals("Delivered")) {
+            	System.out.println(">>>>>>"+orderStatus+" "+LocalDateTime.now() );
+            	order.setDeliveryTime(LocalDateTime.now());
+            }
             order.setOrderStatus(orderStatus);
             return orderRepository.save(order);
         }

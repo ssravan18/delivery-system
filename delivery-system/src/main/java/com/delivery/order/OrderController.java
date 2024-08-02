@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -70,8 +71,9 @@ public class OrderController {
     
  // Update only the order status
     @PatchMapping("/{id}/status")
-    public ResponseEntity<Order> updateOrderStatus(@PathVariable("id") String id, @RequestBody String orderStatus) {
-        Order updatedOrder = ordersService.updateOrderStatus(id, orderStatus);
+    public ResponseEntity<Order> updateOrderStatus(@PathVariable("id") String id, @RequestBody Map<String, String> payload) {
+    	String orderstatus = payload.get("orderStatus");
+        Order updatedOrder = ordersService.updateOrderStatus(id, orderstatus);
         if (updatedOrder != null) {
             return new ResponseEntity<>(updatedOrder, HttpStatus.OK);
         } else {

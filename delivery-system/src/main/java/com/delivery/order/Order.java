@@ -48,6 +48,9 @@ public class Order {
     @Column(name = "delivery_time", nullable = true)
     private LocalDateTime deliveryTime;
     
+    @Column(name = "price", nullable = true)
+    private Double price;
+    
 //    public Order(
 //    		String id,
 //    		Customer customer,
@@ -165,6 +168,14 @@ public class Order {
 
 	public void setPackageWeight(String packageWeight) {
 		this.packageWeight = packageWeight;
+	}
+
+	public Double getAmount() {
+		return price;
+	}
+
+	public void setAmount(Double amount) {
+		this.price = amount;
 	}
 
 }
