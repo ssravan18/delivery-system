@@ -34,9 +34,9 @@ public class FeedbackController {
         return new ResponseEntity<>(feedback, HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<Feedback> addFeedback(@RequestBody Feedback feedback) {
-        Feedback newFeedback = feedbackService.addFeedback(feedback);
+    @PostMapping("{orderId}")
+    public ResponseEntity<Feedback> addFeedback(@RequestBody Feedback feedback, @PathVariable String orderId) {
+        Feedback newFeedback = feedbackService.addFeedback(feedback, orderId);
         return new ResponseEntity<>(newFeedback, HttpStatus.CREATED);
     }
 }
