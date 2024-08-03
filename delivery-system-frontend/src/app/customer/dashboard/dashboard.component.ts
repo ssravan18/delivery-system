@@ -28,6 +28,7 @@ export class CustomerDashboardComponent implements OnInit {
     this.orderService.getCustomerOrders().subscribe(
       (data: Order[]) => {
         this.orders = data;
+        this.sortOrdersByPlacedTime();
       },
       (error) => {
         console.error('Error fetching customer orders', error);
@@ -61,6 +62,14 @@ export class CustomerDashboardComponent implements OnInit {
         }
       );
     }
+  }
+
+  sortOrdersByPlacedTime(): void {
+    this.orders.sort((a, b) => {
+      const dateA = new Date(a.placedTime);
+      const dateB = new Date(b.placedTime);
+      return dateB.getTime() - dateA.getTime();
+    });
   }
 
   openSnackBar(message: string, action: string): void {

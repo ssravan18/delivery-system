@@ -19,7 +19,6 @@ export class OrderStatusDialogComponent {
   ) {}
 
   onNoClick(): void {
-    this.snackBar.open('Order Status Updated successfully', 'Close', { duration: 3000 });
     this.dialogRef.close();
   }
   onYesClick(): void {

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 class Feedback{
-  oderId!: string;
+  orderId!: string;
   feedback!: string;
   rating!: number;
 }
@@ -17,12 +17,13 @@ export class FeedbackService {
   
   constructor(private http: HttpClient) { }
 
-  submitFeedback(feedback: Feedback): Observable<Feedback>{
+
+  submitFeedback(feedback: Feedback, orderId: string): Observable<Feedback>{
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.token}`,
       'Content-Type': 'application/json'
     });
-    return this.http.post<Feedback>(this.apiUrl, feedback, { headers });
+    return this.http.post<Feedback>(this.apiUrl+`/${orderId}`, feedback, { headers });
   }
 
 }

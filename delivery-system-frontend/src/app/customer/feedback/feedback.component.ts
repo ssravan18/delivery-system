@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { FeedbackService } from 'src/app/services/feedback.service';
 
 interface Rating {
@@ -20,6 +21,7 @@ export class FeedbackComponent implements OnInit {
   ratingArr: number[] = [];
 
   constructor(
+    private router: Router,
     private fb: FormBuilder,
     private feedbackservice: FeedbackService,
     private snackBar: MatSnackBar
@@ -46,10 +48,11 @@ export class FeedbackComponent implements OnInit {
     if (this.feedbackForm.valid) {
       const feedbackData = this.feedbackForm.value;
       console.log('Feedback Data:', feedbackData);
-      this.feedbackservice.submitFeedback(feedbackData).subscribe(
+      this.feedbackservice.submitFeedback(feedbackData, feedbackData.orderId).subscribe(
         response => {
           console.log('Feedback submitted successfully:', response);
           this.snackBar.open('Feedback submitted successfully', 'Close', { duration: 3000 });
+          this.router.navigate(['/c-dashboard']);
         },
         error => {
           console.error('Failed to submit feedback:', error);

@@ -56,4 +56,7 @@ export class DriverDashboardComponent implements OnInit {
     );
   }
 
+  isDelivered(order: any): boolean {
+    return order.orderStatus === 'Delivered';
+  }
 }

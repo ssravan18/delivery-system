@@ -4,5 +4,6 @@ export interface Driver {
     email: string;
     phone: string;
     vehicle: string;
+    pincode: number;
     drivingLicense: string;
   }

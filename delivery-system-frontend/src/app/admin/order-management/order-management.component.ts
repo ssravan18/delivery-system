@@ -27,6 +27,7 @@ export class OrderManagementComponent implements OnInit {
     this.adminservice.getOrders().subscribe(
       (data: Order[]) => {
         this.orders = data;
+        this.sortOrdersByPlacedTime();
       },
       error => {
         console.error('Error fetching customer data:', error);
@@ -61,5 +62,13 @@ export class OrderManagementComponent implements OnInit {
 
   isDelivered(order: any): boolean {
     return order.orderStatus === 'Delivered';
+  }
+
+  sortOrdersByPlacedTime(): void {
+    this.orders.sort((a, b) => {
+      const dateA = new Date(a.placedTime);
+      const dateB = new Date(b.placedTime);
+      return dateB.getTime() - dateA.getTime();
+    });
   }
 }
